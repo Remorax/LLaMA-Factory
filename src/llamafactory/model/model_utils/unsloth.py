@@ -39,6 +39,7 @@ def _get_unsloth_kwargs(
         "dtype": model_args.compute_dtype,
         "load_in_4bit": model_args.quantization_bit == 4,
         "token": model_args.hf_hub_token,
+        "lora_dropout": model_args.lora_dropout,
         "full_finetuning": finetuning_args.finetuning_type == "full",
         "device_map": {"": get_current_device()},
         "rope_scaling": getattr(config, "rope_scaling", None),
